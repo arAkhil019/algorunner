@@ -25,10 +25,15 @@ function App() {
   });
 
   const difficulties = {
-    easy: { coinCount: 5, timeLimit: 25, label: 'Easy' },
-    medium: { coinCount: 10, timeLimit: 25, label: 'Medium' },
-    hard: { coinCount: 15, timeLimit: 25, label: 'Hard' }
+    easy: { coinCount: 8, timeLimit: 30, label: 'Easy' },
+    medium: { coinCount: 5, timeLimit: 25, label: 'Medium' },
+    hard: { coinCount: 5, timeLimit: 19, label: 'Hard' }
   };
+
+  // Start ambient music on page load and keep it playing
+  useEffect(() => {
+    startAmbientMusic();
+  }, []);
 
   // Handle High Score
   useEffect(() => {
@@ -61,12 +66,10 @@ function App() {
   const handleStartGame = () => {
     setGameStarted(true);
     fetchMaze(difficulties[difficulty]);
-    startAmbientMusic();
   };
 
   const handleBackToMenu = () => {
     setGameStarted(false);
-    stopAmbientMusic();
   };
 
   return (
@@ -169,7 +172,7 @@ function App() {
               <div className="overlay">
                 <div className="overlay-content">
                   <h2>{gameState === 'won' ? 'Mission Complete' : 'Game Over'}</h2>
-                  <p>{gameState === 'won' ? `All coins collected in ${30 - timeLeft}s` : 'Time Critical Failure'}</p>
+                  <p>{gameState === 'won' ? `All coins collected in ${difficulties[difficulty].timeLimit - timeLeft}s` : 'Time Critical Failure'}</p>
                   <p>Final Score: {score}</p>
                   <p style={{fontSize: '0.7rem', color: '#00ffff', marginTop: '-20px', marginBottom: '30px'}}>
                     {score >= highScore && score > 0 ? 'NEW HIGH SCORE!' : `Best: ${highScore}`}
