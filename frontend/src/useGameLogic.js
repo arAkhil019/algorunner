@@ -23,7 +23,7 @@ export const useGameLogic = () => {
       if (config) {
         setGameConfig(config);
       }
-      const response = await fetch('/maze');
+      const response = await fetch('/api/maze');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
