@@ -1,4 +1,7 @@
-package com.ar.AlgoRunner;
+package com.ar.AlgoRunner.Services;
+import com.ar.AlgoRunner.Models.Maze;
+import com.ar.AlgoRunner.Models.box;
+
 import java.util.*;
 
 public class mazerDFS {

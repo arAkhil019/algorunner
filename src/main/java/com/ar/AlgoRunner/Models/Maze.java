@@ -1,6 +1,4 @@
-package com.ar.AlgoRunner;
-
-import java.util.HashMap;
+package com.ar.AlgoRunner.Models;
 
 public class Maze {
     private box[][] maze;

@@ -1,5 +1,7 @@
-package com.ar.AlgoRunner;
+package com.ar.AlgoRunner.Controller;
 
+import com.ar.AlgoRunner.Services.MazeGen;
+import com.ar.AlgoRunner.Models.box;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.ar.AlgoRunner;
+package com.ar.AlgoRunner.Models;
 
 import java.util.HashMap;
 import java.util.Map;
