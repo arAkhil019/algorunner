@@ -1,8 +1,5 @@
 package com.ar.AlgoRunner;
 
-import org.yaml.snakeyaml.util.Tuple;
-
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,7 +33,6 @@ public class box {
         this.walls.put("right",this.right);
         this.walls.put("top",this.top);
         this.walls.put("bottom",this.bottom);
-//        System.out.println(this.walls.keySet());
         return this.walls;
     }
 

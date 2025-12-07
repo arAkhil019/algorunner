@@ -5,16 +5,25 @@ import org.springframework.stereotype.Component;
 @Component
 public class MazeGen {
 
+    private static final int MAZE_SIZE = 15;
+
     public box[][] generateMaze() {
-        Maze maze = new Maze(5);
+        Maze maze = new Maze(MAZE_SIZE);
         maze.initialiseMaze();
-        mazerBFS.bfs(maze);
-//        System.out.println("Maze:");
-        box[][] op = maze.getOutMaze(maze);
-//        System.out.println(op[0][0].length);
-        return op;
+        mazerDFS.dfs(maze);
+
+        box[][] grid = maze.getMaze();
+        for (int y = 0; y < MAZE_SIZE; y++) {
+            for (int x = 0; x < MAZE_SIZE; x++) {
+                grid[y][x].getWalls();
+            }
+        }
+
+        return grid;
     }
+
     public static void main(String[] args) {
-        new MazeGen().generateMaze();
+        box[][] maze = new MazeGen().generateMaze();
+        System.out.println("Generated " + MAZE_SIZE + "x" + MAZE_SIZE + " maze");
     }
 }
