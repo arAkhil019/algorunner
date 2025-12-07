@@ -52,7 +52,7 @@ public class mazerDFS {
                 int nx = currentX + dx;  // next column
                 int ny = currentY + dy;  // next row
 
-                if (inLimit(nx, ny, cols, rows) && grid[ny][nx].getState() == 0) {
+                if (inLimit(nx, ny, cols, rows) && (grid[ny][nx].getState() == 0 || Math.random() < 0.05)) {
                     neighbors.add(new int[]{nx, ny, dx, dy});
                 }
             }
